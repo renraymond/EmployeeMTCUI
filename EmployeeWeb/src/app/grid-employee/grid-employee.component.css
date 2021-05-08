@@ -1,0 +1,10 @@
+table {
+    margin-top: 1.5em;
+}
+
+tbody td {
+    text-align: left;
+}
+table, th, td {
+    border: 1px solid black;
+  }

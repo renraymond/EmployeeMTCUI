@@ -1,0 +1,31 @@
+<div>
+    <h2>Personal Information</h2>
+  <h2 *ngIf="!employeeInfo || employeeInfo.id === undefined">Add record</h2>
+  <h2 *ngIf="employeeInfo && employeeInfo.id !== undefined">Update record (ID: )</h2>
+  <form>
+      <div class="form-group">
+          <label for="name-input">Full Name:</label>
+          <input id="name-input" [(ngModel)]="employeeInfo.name" class="form-control" name="name" />
+      </div>
+      <div class="form-group">
+          <label for="address-input">Address</label>
+          <input id="address-input" [(ngModel)]="employeeInfo.address" class="form-control" name="address" />
+      </div>
+      <div class="form-group">
+          <label for="phone-input">Phone Number</label>
+          <input id="phone-input" [(ngModel)]="employeeInfo.phoneNumber" class="form-control" name="phoneNumber" />
+      </div>
+      <div class="form-group">
+        <label for="position-input">Position</label>
+        <!-- <input id="position-input" [(ngModel)]="employeeInfo.position" class="form-control" name="position"/> -->
+        <select name="position" id="position-input" [(ngModel)]="employeeInfo.position" class="form-control">
+            <option value="Software Developer">Software Developer</option>
+            <option value="HR">HR</option>
+            <option value="Manager">Manager</option>
+            <option value="VP">VP</option>
+          </select>
+    </div>
+      <button type="button" class="btn btn-primary" (click)="addOrUpdateemployeeRecord($event);">Save</button>
+
+  </form>
+ </div>

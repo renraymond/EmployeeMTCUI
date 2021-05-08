@@ -1,0 +1,25 @@
+<!-- <a href="#" id="new-button" (click)="newRecord()">New</a> -->
+<button type="button" class="btn btn-primary" (click)="newRecord();">New</button>
+<table>
+<thead>
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+        <th>Position</th>
+        <th>Action</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let employeeInfo of employeeData"> 
+        <td>{{ employeeInfo.name }}</td>
+        <td>{{ employeeInfo.address }}</td>
+        <td>{{ employeeInfo.phoneNumber }}</td>
+        <td>{{ employeeInfo.position }}</td>
+        <td>
+            <a href="#" (click)="editRecord(employeeInfo)">Edit</a>
+            <a href="#" (click)="deleteRecord(employeeInfo)" style="margin-left: 20px;">Delete</a>
+        </td>
+    </tr>
+</tbody>
+</table>
